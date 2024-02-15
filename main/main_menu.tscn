@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://sjxowcrul3np"]
+
+[ext_resource type="Script" path="res://main/main_menu.gd" id="1_8581s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbktr"]
+bg_color = Color(0.847059, 0.611765, 0.580392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_junoa"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_ri5tn"]
+font_size = 32
+
+[node name="MainMenu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qbktr")
+script = ExtResource("1_8581s")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.5
+offset_top = -217.0
+offset_right = 387.5
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DELIVER ON!"
+label_settings = SubResource("LabelSettings_junoa")
+
+[node name="HighscoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -56.0
+offset_right = 77.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Highscore
+9999"
+label_settings = SubResource("LabelSettings_ri5tn")
+horizontal_alignment = 1
+
+[node name="NewGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 64.0
+offset_right = 88.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+
+[node name="ExitGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = 122.0
+offset_right = 82.5
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Exit Game"
+
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="ExitGame" to="." method="_on_exit_game_pressed"]

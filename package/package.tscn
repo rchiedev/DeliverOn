@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn06tsoph877k"]
+
+[ext_resource type="Script" path="res://package/package.gd" id="1_43g8y"]
+[ext_resource type="Texture2D" uid="uid://csvmw7miq3mps" path="res://assets/Speech-Bubble.png" id="1_r7g30"]
+
+[node name="Package" type="Sprite2D"]
+scale = Vector2(0.0460081, 0.0460081)
+texture = ExtResource("1_r7g30")
+script = ExtResource("1_43g8y")
+
+[node name="CurrentPackage" type="Sprite2D" parent="."]
+position = Vector2(0, -86.9412)
+scale = Vector2(15, 15)

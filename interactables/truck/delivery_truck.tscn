@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bptnf2afhqoe6"]
+
+[ext_resource type="PackedScene" uid="uid://cgb7wbd8ptfgc" path="res://interactables/interactable.tscn" id="1_tiyjn"]
+[ext_resource type="Script" path="res://interactables/truck/delivery_truck.gd" id="1_wuiiw"]
+[ext_resource type="Texture2D" uid="uid://dirvk4swku0x8" path="res://assets/truckdelivery.png" id="2_xjwoh"]
+[ext_resource type="AudioStream" uid="uid://ckqpnxggo1rmf" path="res://assets/package_pickup.wav" id="4_v6kdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0oaw"]
+size = Vector2(67, 67)
+
+[node name="DeliveryTruck" instance=ExtResource("1_tiyjn")]
+script = ExtResource("1_wuiiw")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -17)
+scale = Vector2(-1.39038, 1.39038)
+texture = ExtResource("2_xjwoh")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, -33.5)
+shape = SubResource("RectangleShape2D_k0oaw")
+
+[node name="Package" parent="." index="2"]
+position = Vector2(0, -50)
+
+[node name="CPUParticles2D" parent="." index="4"]
+position = Vector2(0, -16)
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_v6kdu")

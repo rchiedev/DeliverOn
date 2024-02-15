@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://baa8xr6oc6j3r"]
+
+[ext_resource type="Script" path="res://interactables/recipient/recipient.gd" id="1_ntf26"]
+[ext_resource type="PackedScene" uid="uid://cgb7wbd8ptfgc" path="res://interactables/interactable.tscn" id="1_s5dox"]
+[ext_resource type="Texture2D" uid="uid://dxut46x3wxcc4" path="res://assets/tile_0002.png" id="2_kgd0f"]
+[ext_resource type="AudioStream" uid="uid://vmtkit71uedx" path="res://assets/package_delivered.wav" id="4_ghcsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1gfk"]
+size = Vector2(24, 31)
+
+[node name="Recipient" instance=ExtResource("1_s5dox")]
+script = ExtResource("1_ntf26")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -12)
+texture = ExtResource("2_kgd0f")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_x1gfk")
+
+[node name="Package" parent="." index="2"]
+position = Vector2(0, -40)
+
+[node name="CPUParticles2D" parent="." index="4"]
+position = Vector2(0, -11)
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_ghcsp")

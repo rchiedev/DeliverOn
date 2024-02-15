@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqhe7kjkacomf"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_8mdac"]
+[ext_resource type="Texture2D" uid="uid://qwli0bujhs4q" path="res://assets/man.png" id="2_5jffq"]
+[ext_resource type="Texture2D" uid="uid://coqj32l440x67" path="res://assets/man_walk1.png" id="3_86ron"]
+[ext_resource type="Texture2D" uid="uid://vor6sn4d23wo" path="res://assets/man_walk2.png" id="4_cmrcc"]
+[ext_resource type="PackedScene" uid="uid://bn06tsoph877k" path="res://package/package.tscn" id="5_bthhv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhpq8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5jffq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_86ron")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cmrcc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qdo3"]
+size = Vector2(5, 3)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_8mdac")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yhpq8")
+animation = &"walk"
+frame_progress = 0.32682
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0qdo3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -23)
+zoom = Vector2(3, 3)
+
+[node name="Package" parent="." instance=ExtResource("5_bthhv")]
+position = Vector2(-4.76837e-07, -17)
+scale = Vector2(0.0270636, 0.0270636)

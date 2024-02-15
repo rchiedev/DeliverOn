@@ -1,0 +1,133 @@
+[gd_scene load_steps=6 format=3 uid="uid://rbus2vf62w83"]
+
+[ext_resource type="Script" path="res://main/game_over_screen.gd" id="1_mr2th"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uw2sr"]
+bg_color = Color(0.00784314, 0.00392157, 0, 0.980392)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3y6yd"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_s7isi"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_1si3x"]
+font_size = 32
+
+[node name="GameOverScreen" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uw2sr")
+script = ExtResource("1_mr2th")
+
+[node name="Title" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -279.0
+offset_right = 177.0
+offset_bottom = -188.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game over!"
+label_settings = SubResource("LabelSettings_3y6yd")
+
+[node name="GameOverHighscore" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -192.0
+offset_right = 77.5
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Highscore
+9999"
+label_settings = SubResource("LabelSettings_s7isi")
+horizontal_alignment = 1
+
+[node name="GameOverScore" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -92.0
+offset_right = 83.5
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your Score
+9999
+"
+label_settings = SubResource("LabelSettings_1si3x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 44.0
+offset_right = 88.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 107.5
+offset_right = 91.0
+offset_bottom = 160.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+
+[node name="ExitGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = 208.0
+offset_right = 82.5
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Exit Game"
+
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="ExitGame" to="." method="_on_exit_game_pressed"]

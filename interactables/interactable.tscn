@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgb7wbd8ptfgc"]
+
+[ext_resource type="PackedScene" uid="uid://bn06tsoph877k" path="res://package/package.tscn" id="1_fxtw3"]
+[ext_resource type="Script" path="res://interactables/interactable.gd" id="1_n88hx"]
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_n88hx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Package" parent="." instance=ExtResource("1_fxtw3")]
+visible = false
+position = Vector2(0, -15)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.65
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+linear_accel_min = -75.0
+angle_max = 180.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -20.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
