@@ -1,15 +1,15 @@
 class_name Interactable
 extends Area2D
 
-var current_package : int = -1
-var can_receive : bool = false
-var player : Player
-
 @onready var sprite = $Sprite2D
 @onready var package = $Package
 @onready var timer = $Timer
 @onready var particle = $CPUParticles2D
 @onready var audio_player = $AudioStreamPlayer2D
+
+var current_package : int = -1
+var can_receive : bool = false
+var player : Player
 
 func _ready():
 	package.visible = false

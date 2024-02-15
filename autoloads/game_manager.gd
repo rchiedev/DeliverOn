@@ -10,7 +10,6 @@ var main_menu_scene := preload("res://main/main_menu.tscn")
 
 func _ready():
 	load_highscore()
-	print("load highscore")
 
 func set_highscore(score : int = 0):
 	if score > highscore:

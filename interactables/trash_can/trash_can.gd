@@ -7,9 +7,6 @@ func set_package_request():
 
 func receive_package():
 	if player.has_package():
-		print("Package thrown away!")
 		particle.emitting = true
 		player.remove_package()
 		audio_player.play()
-	else:
-		print("No package to throw!")

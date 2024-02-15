@@ -1,13 +1,13 @@
 extends Node2D
 
 @onready var player_spawn = $PlayerSpawn
-var player_scene := preload("res://player/player.tscn")
 @onready var game_timer = %GameTimer
 @onready var timer = $Timer
 @onready var score_label = %ScoreLabel
 @onready var game_over_screen = %GameOverScreen
 @onready var pause_menu = %PauseMenu
 
+var player_scene := preload("res://player/player.tscn")
 var score : int = 0
 var player : Player
 
@@ -32,7 +32,6 @@ func add_score():
 	score_label.text = str(score)
 
 func _on_timer_timeout():
-	print("Game is over!")
 	GameManager.set_highscore(score)
 	player.disable_movement()
 	game_over_screen.visible = true

@@ -19,13 +19,10 @@ func set_package_request():
 
 func receive_package():
 	if player.find_package(current_package):
-		print("Package received!")
 		current_package = -1
 		timer.start(randf_range(3.0, 5.0))
 		package.visible = false
 		particle.emitting = true
 		player.on_package_sent()
 		audio_player.play()
-	else:
-		print("Wrong package!")
 
