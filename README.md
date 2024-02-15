@@ -14,3 +14,7 @@ How to play:
 2. Deliver the package to the correct recipient.
 3. Throw away unwanted package.
 4. Repeat until the timer runs out!
+
+Assets Credits:
+* <a href="https://www.kenney.nl/">Kenney for sprites</a>
+* <a href="https://shapeforms.itch.io/shapeforms-audio-free-sfx">Shapeforms for audio</a>
