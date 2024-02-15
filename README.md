@@ -1,6 +1,5 @@
 # DeliverOn
- Work your way to deliver the package!
-
+ Work your way to deliver the package! <a href="https://thermian.itch.io/deliveron">Check the game here!</a>
 
 https://github.com/rchiedev/DeliverOn/assets/92310253/5fd0abe6-1f66-4f70-a7e6-e8f13e8d11b8
 
