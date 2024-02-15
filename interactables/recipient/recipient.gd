@@ -19,7 +19,6 @@ func set_package_request():
 
 func receive_package():
 	if player.find_package(current_package):
-		current_package = -1
 		timer.start(randf_range(3.0, 5.0))
 		package.visible = false
 		particle.emitting = true
